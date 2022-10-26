@@ -8,15 +8,24 @@ if int(minutes_light_use):
     hours_light_use = minutes_light_use/60
     
 else:
-        print("This program only works with integers. Let's try that again. ")
+    print("This program only works with integers. Let's try that again. ")    
 
 #ask the user for the watt hours of the bulb and how many bulbs leaving a switch on controls
 light_wattage = int(input("What is the wattage of the bulb? --> "))
-number_of_lights = int(input("How many lights use this bulb when the switch is turned on? --> "))
 
-#kilowatts hours used is the product of the watt hours of the bulb (divided by 1000 to make 1 kilowatt), the number of lights and the number of hours the lights were on for
-kwh_used = light_wattage * number_of_lights * hours_light_use/1000
+if int(light_wattage):
+    number_of_lights = int(input("How many lights use this bulb when the switch is turned on? --> "))
+    if int(number_of_lights):
+        
+        #kilowatts hours used is the product of the watt hours of the bulb (divided by 1000 to make 1 kilowatt), the number of lights and the number of hours the lights were on for
+        kwh_used = light_wattage * number_of_lights * hours_light_use/1000
 
-#the cost of the electricity is equal to the product of the price per kilowatt hour and the number of kilowatt hours 
-electricity_cost = kwh_price * kwh_used
-print(f"Leaving the light on for {minutes_light_use} minutes has cost R{electricity_cost}")
+        #the cost of the electricity is equal to the product of the price per kilowatt hour and the number of kilowatt hours 
+        electricity_cost = kwh_price * kwh_used
+        print(f"Leaving the light on for {minutes_light_use} minutes has cost R{electricity_cost}")
+        
+    #else condition in case someone enters input that is not an integer
+    else:
+        print("This program only works with integers. Let's try that again. ")
+else:
+    print("This program only works with integers. Let's try that again. ")
