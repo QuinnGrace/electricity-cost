@@ -22,6 +22,7 @@ if  light_wattage.isdigit():
 
         #the cost of the electricity is equal to the product of the price per kilowatt hour and the number of kilowatt hours 
         electricity_cost = kwh_price * kwh_used
+        round(electricity_cost, 2)
         print(f"Leaving the light on for {minutes_light_use} minutes has cost R{electricity_cost}")
         
     #else condition in case someone enters input that is not an integer
